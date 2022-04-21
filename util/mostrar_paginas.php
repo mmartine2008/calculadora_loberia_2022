@@ -5,9 +5,9 @@ function mostrarHeader() {
     $contenido = '<head>
     <meta charset="UTF-8">
     <!-- CSS only -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="'.BASE_URL.'css/bootstrap.min.css" rel="stylesheet">
     <!-- JavaScript Bundle with Popper -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="'.BASE_URL.'js/bootstrap.bundle.min.js"></script>
     </head>';
     return $contenido;
 }
@@ -35,7 +35,7 @@ function home() {
     <body>
         <div class="container">
             '.mostrarNav().'
-            <form action="util/calculadora.php" method="GET">
+            <form action="" method="GET">
     
                 <label class="form-label"> Ingrese X: </label>
                 <input class="form-control" type="text" name="operadorX" required>
@@ -102,4 +102,23 @@ function mostrarPi() {
     </html>';
 
     echo $contenido;
+}
+
+function mostrarResultado($resultado) {
+    $contenido = '<!DOCTYPE html>
+    <html>'.mostrarHeader().'
+    <body>
+        <div class="container">
+            '.mostrarNav().'
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1>Resultado</h1>
+                    <p>El resultado es '.$resultado.'</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+    </html>';
+    echo $contenido;    
 }

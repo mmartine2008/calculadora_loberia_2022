@@ -1,5 +1,8 @@
 <?php
+    define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
+
     require_once('util/mostrar_paginas.php');
+    require_once('util/matematica.php');
 
     // lee la acción
     if (!empty($_GET['action'])) {
@@ -10,19 +13,18 @@
 
     $parametros = explode('/', $action);
 
-    switch ($action) {
+    switch ($parametros[0]) {
         case 'home': home(); break;
         case 'acerca': acerca(); break;
         case 'pi': mostrarPi(); break;
         case 'suma': {
             $a = $parametros[1];
             $b = $parametros[2];
-            echo ("Ud. eligió suma de $a y $b"); 
+            $resultado = sumar($a, $b);
             
+            mostrarResultado($resultado);
         }break;
         case 'resta': echo ('Ud. eligió resta'); break;
         default: echo ('Ud. eligio '.$action); break;
 
     }
-
-    // ['suma', 1, 2]
