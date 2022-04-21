@@ -8,6 +8,7 @@ function mostrarHeader() {
     <link href="'.BASE_URL.'css/bootstrap.min.css" rel="stylesheet">
     <!-- JavaScript Bundle with Popper -->
     <script src="'.BASE_URL.'js/bootstrap.bundle.min.js"></script>
+    
     </head>';
     return $contenido;
 }
@@ -35,7 +36,7 @@ function home() {
     <body>
         <div class="container">
             '.mostrarNav().'
-            <form action="" method="GET">
+            <form action="" method="GET" id="formulario">
     
                 <label class="form-label"> Ingrese X: </label>
                 <input class="form-control" type="text" name="operadorX" required>
@@ -46,15 +47,19 @@ function home() {
                 <label class="form-label"> Operación </label>
                 <select name="operacion" class="form-control">
                     <option selected> -- Seleccione --</option>
-                    <option value=1>Sumar</option>
-                    <option value=2>Restar</option>
-                    <option value=3>Dividir</option>
-                    <option value=4>Multiplicar</option>
+                    <option value="suma">Sumar</option>
+                    <option value="resta">Restar</option>
+                    <option value="dividir">Dividir</option>
+                    <option value="multiplicar">Multiplicar</option>
                 </select>
     
                 <input type="submit" value="Calcular">
             </form>
+            
+            <div id="resultado">
+            </div>
         </div>
+        <script src="'.BASE_URL.'js/main.js"></script>
     </body>
     
     </html>';

@@ -21,10 +21,14 @@
             $a = $parametros[1];
             $b = $parametros[2];
             $resultado = sumar($a, $b);
-            
-            mostrarResultado($resultado);
+            echo($resultado);
         }break;
-        case 'resta': echo ('Ud. eligió resta'); break;
+        case 'resta': {
+            $a = $parametros[1];
+            $b = $parametros[2];
+            $resultado = restar($a, $b);
+            echo($resultado);
+        }break;
         default: echo ('Ud. eligio '.$action); break;
 
     }
