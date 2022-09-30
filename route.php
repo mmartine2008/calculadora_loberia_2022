@@ -32,3 +32,4 @@
         default: echo ('Ud. eligio '.$action); break;
 
     }
+?>
